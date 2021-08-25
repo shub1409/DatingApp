@@ -27,7 +27,7 @@ namespace API.Data.Migrations
                 defaultValue: new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
             migrationBuilder.AddColumn<DateTime>(
-                name: "DOB",
+                name: "DateOfBirth",
                 table: "Users",
                 type: "TEXT",
                 nullable: false,
@@ -51,6 +51,12 @@ namespace API.Data.Migrations
                 type: "TEXT",
                 nullable: true);
 
+            migrationBuilder.AddColumn<string>(
+                name: "KnownAs",
+                table: "Users",
+                type: "TEXT",
+                nullable: true);
+
             migrationBuilder.AddColumn<DateTime>(
                 name: "LastActive",
                 table: "Users",
@@ -60,12 +66,6 @@ namespace API.Data.Migrations
 
             migrationBuilder.AddColumn<string>(
                 name: "LookingFor",
-                table: "Users",
-                type: "TEXT",
-                nullable: true);
-
-            migrationBuilder.AddColumn<string>(
-                name: "knownAs",
                 table: "Users",
                 type: "TEXT",
                 nullable: true);
@@ -116,7 +116,7 @@ namespace API.Data.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
-                name: "DOB",
+                name: "DateOfBirth",
                 table: "Users");
 
             migrationBuilder.DropColumn(
@@ -132,15 +132,15 @@ namespace API.Data.Migrations
                 table: "Users");
 
             migrationBuilder.DropColumn(
+                name: "KnownAs",
+                table: "Users");
+
+            migrationBuilder.DropColumn(
                 name: "LastActive",
                 table: "Users");
 
             migrationBuilder.DropColumn(
                 name: "LookingFor",
-                table: "Users");
-
-            migrationBuilder.DropColumn(
-                name: "knownAs",
                 table: "Users");
         }
     }
