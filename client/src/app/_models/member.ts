@@ -2,7 +2,7 @@
     
     export interface Member {
         id: number;
-        userName: string;
+        username: string;
         photoUrl: string;
         age: number;
         knownAs?: string;
