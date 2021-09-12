@@ -2,6 +2,7 @@ using API.Data;
 using API.Helpers;
 using API.Repository;
 using API.Repository.Likes;
+using API.Repository.Messages;
 using API.Service;
 using API.Service.Photo;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,7 @@ namespace API.Extensions
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IPhotoService,PhotoService>();
             services.AddScoped<ILikesRepository, LikesRepository>();
+            services.AddScoped<IMessageRepository, MessageRepository>();
             services.AddScoped<LogUserActivity>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
