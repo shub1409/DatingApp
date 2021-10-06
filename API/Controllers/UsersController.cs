@@ -32,8 +32,8 @@ namespace API.Controllers
             _mapper = mapper;
         }
 
+        // [Authorize(Roles = "Admin")]
         [HttpGet]
-        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<MemberDto>>> GetUsers([FromQuery] UserParams userParams)
         {
             var user = await _userRepository.GetUserByUsernameAsync(User.GetUsername());
@@ -50,6 +50,7 @@ namespace API.Controllers
         }
 
         //api/users/monica
+        [Authorize(Roles = "Member")]
         [HttpGet("{username}", Name="GetUser")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
