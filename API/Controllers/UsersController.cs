@@ -50,7 +50,7 @@ namespace API.Controllers
         }
 
         //api/users/monica
-        [Authorize(Roles = "Member")]
+        // [Authorize(Roles = "Member")]
         [HttpGet("{username}", Name="GetUser")]
         public async Task<ActionResult<MemberDto>> GetUser(string username)
         {
