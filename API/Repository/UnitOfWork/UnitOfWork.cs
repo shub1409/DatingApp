@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using API.Data;
 using API.Repository.Likes;
 using API.Repository.Messages;
+using API.Repository.Photos;
 using AutoMapper;
 
 namespace API.Repository.UnitOfWork
@@ -24,6 +25,8 @@ namespace API.Repository.UnitOfWork
         public IMessageRepository MessageRepository => new MessageRepository(_context,_mapper);
 
         public ILikesRepository LikesRepository => new LikesRepository(_context);
+
+        public IPhotoRepository PhotoRepository => new PhotoRepository(_context);
 
         public async Task<bool> Complete()
         {
